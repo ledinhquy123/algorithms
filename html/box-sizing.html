@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quy-Nhung</title>
+        <meta charset="utf-8">
+        <style>
+            html, body{
+                margin: 0;
+            }
+            .box{
+                width: 100px;
+                height: 100px;
+                color:  #fff;
+                background-color: darkorchid;
+                padding: 16px;
+                border: 4px solid #333;
+                /*trong trường hợp này box-sizing hiểu 100px bằng tổng kích thước của content + padding + border
+                nếu cố tình chỉnh kích thước của các phần trên quá lớn thì sẽ không được giữ nguyên kích thước ban đầu*/
+                box-sizing: border-box;
+                /*để content-box nó sẽ quay lại như khi chỉnh
+                unset là hủy*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box">Đây là nội dung bài viết</div>
+    </body>
+</html>

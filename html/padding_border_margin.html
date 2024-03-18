@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quy-Dev</title>
+        <meta charset="utf-8">
+
+        <style>
+            .box{
+                width: 60px;
+                height: 60px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                float: left;
+            }
+
+            .box1{
+                background-color: #333;
+                /* margin không làm thay đổi kích thước của box
+                khi chỉnh margin lớn quá kích thước thì box sẽ nhảy xuống dưới*/
+                margin-left: 20px;
+            }
+
+            .box2{
+                background-color: orange;
+                margin-left: 20px;
+            }
+
+            .box3{
+                background-color: red;
+                /*
+                Có thể viết tắt như sau khi thêm 1 giá trị nó sẽ hiểu là cả 4 hướng
+                Khi thêm 2 giá trị thì gt1 là trên và dưới còn gt2 là còn lại
+                Khi thêm 3 giá trị thì gt1 là trên, gt2 là trái và phải, gt3 là dưới
+                Khi thêm 4 giá trị thì gt1 là trên, gt2 là phải, gt3 là dưới, gt4 là trái
+                */
+                padding: 10px 20px 15px 25px;
+                /* padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px; */
+
+
+                /* border-width: 10px; */
+                /*Nếu bỏ giá trị đầu 10px thì mặc định border sẽ là 2px */
+                border: 10px solid #333;
+                /* border-top: 10px solid #333; */
+                /* border-style: solid;
+                border-color: #333; */
+
+
+                /*Viết ngắn gon của margin giống padding*/
+                margin: 10px 20px 15px 25px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </body>
+
+</html>

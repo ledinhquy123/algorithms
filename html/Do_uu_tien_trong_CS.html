@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--Độ ưu tiên trong CSS-->
+<!--
+    1. Interal, External: độ ưu tiên giống nhau cái nào gọi sau sẽ được thực hiện
+    2. Inline - 1000 (cao nhất)
+    3. #id - 100
+    4. .class - 10
+    5. tag - 1: gọi luôn tên thẻ
+    Equal specificity?
+    Universal selector and inherited? - 0: tính phổ biến
+-->
+<html>
+    <head>
+        <title>Quy-Nhung</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <style>
+            h1{
+                color: brown;
+            }
+            #nhung-id.nhung-class{
+                color: blue;
+            }
+            #nhung-id{
+                color: violet !important;
+            }
+            .nhung-class{
+                color: aqua;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="nhung-id" class="nhung-class">Priority?</h1>    
+        <ol>
+            <li>Internal, External</li>
+            <li>Inilne - 1000</li>
+            <li>#id - 100</li>
+            <li>.class - 10</li>
+            <li>tag - 1</li>
+            <li>Equal specificity?</li>
+            <li>Universal selector and inherited?</li>
+        </ol>    
+    </body>
+</html>

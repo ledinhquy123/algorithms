@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quy-Dev</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0;
+            }
+            .box{
+                width: calc(80% + 20%);
+                height: 120px;
+                background-color: rgb(240, 161, 215);
+            }
+            .box::after{
+                content: attr(data-title);
+            }
+            a::after{
+                content: "("attr(href)")" ; /*lấy ra thuộc tính của thẻ a trong th này thì lây ra cái link trang web hiển thị lên*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="box" data-title="Đây là box màu hồng"></div>
+            <a href="https://www.youtube.com/">Xem youtube</a>
+            <h1 title = "Đây là trang wed của Lê Đình Quý">CSS functions</h1>
+            <ul>
+                <li>var()</li>
+                <li>linear-gradient()</li>
+                <li>rgba()</li>
+                <li>rgb()</li> <!--rgb tương tự rgba nhưng không có tham số alpha - nó không tạo được màu trong suốt-->
+                <li>calc()</li> <!--calculator là 1 thẻ tính toán vd:width(100% + 20px)-->
+                <li>attr()</li> <!--attributed hay sử dụng cùng lớp giả-->
+            </ul>
+        </div>
+    </body>
+
+</html>

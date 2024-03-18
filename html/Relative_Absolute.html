@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quy-Dev</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0;
+            }
+            h1{
+                /*khác với margin-top sẽ đẩy tất cả nội dung*/
+                /* position: relative; */
+                top: 100px; /*chỉ đẩy thẻ h1 kể cả đè lên nội dung khác chỉ hoạt động khi có position*/
+                left: 100px;
+            }
+            .box{
+                width: 100%;
+                height: 120px;
+                background-color: #333;
+                position: relative;
+            }
+            .box-child{
+                width: 50px;
+                height: 50px; 
+                /*Khi bỏ set kích thước thì thẻ con sẽ bao phủ toàn bộ thẻ cha*/
+                /* background-color: rgba(255, 255, 255, 0.3); */
+                position: absolute;
+                /*sẽ ưu tiên left và top*/
+                /* top: 10px;
+                right: 10px;
+                left: 10px;
+                bottom: 10px; */
+                /*thẻ này sẽ tìm thẻ gần nó nhất có thuộc tính position để làm gốc tọa độ nên thẻ box phải để relative*/
+                background-color: #fff;
+                top: 10px;
+                right: 10px;
+            }
+
+            .box2{
+                width: 400px;
+                height: 100px; 
+                background-color: violet;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="box">
+                <div>
+                    <div class="box2">
+                        <div class="box-child"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Position</h1>
+            <ul>
+                <li>Relative</li> <!--tương đối lấy chính mình làm gốc tọa độ k phụ thuộc vào bên ngoài-->
+                <li>Absolute</li> <!--tuyệt đối-->
+                <li>Fixed</li>  <!--phụ thuộc vào khung trình duyệt-->
+                <li>Sticky</li> <!--vị trí bám dính phụ thuộc vào khung trình duyệt-->
+            </ul> 
+        </div>
+    </body>
+</html>

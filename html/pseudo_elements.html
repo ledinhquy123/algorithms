@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>quy</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0;
+            }
+            .box{
+                width: 100%;
+                height: 120px;
+                background-color: rgb(190, 124, 157);
+            }
+            /*mỗi element chỉ tồn tại được 1 before, 1 after không tồn tại 2 before, 2 after*/
+            .box::before{
+                content: ""; /*không thể thiếu giúp phân tử giả tồn tại được*/
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #fff;
+            }
+
+            .box::after{
+                content: "xin chào";
+                color: red;
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #fff;
+            }
+
+            /* h1::first-letter{
+                font-size: 50px;
+            }
+            h1::first-line{
+                color: blue;
+            } */
+            /*nếu bỏ thẻ h1 thì toàn bộ chữ trên wed sẽ bị ảnh hưởng*/
+            h1::selection{
+                background-color: brown; /*màu nền*/
+                color: aquamarine; /*mãu chữ*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1>CSS pseudo-elements<br/>Dòng thứ 2</h1> <!-- <br/> xuống dòng-->
+            <ul>
+                <li>::before</li> <!--before luôn đứng trước after luôn đứng sau-->
+                <li>::after</li>
+                <li>::first-letter</li> <!-- chọn chữ cái đầu-->
+                <li>::first-line</li> <!-- chọn dòng đầu-->
+                <li>::selection</li> <!--khi chọn vào 1 phần tử mới thay đổi-->
+            </ul>
+        </div>
+    </body>
+</html>

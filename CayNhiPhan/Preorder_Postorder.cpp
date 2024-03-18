@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Preorder, postorder
+struct Node{
+    int val;
+    Node *left, *right;
+    Node(int x){
+        val = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+void MakeNode(Node *root, int u, int v, char c){
+    if(c == 'L') root->left = new Node(v);
+    else root->right = new Node(v);
+}
+
+void InsertNode(Node *root, int u, int v, char c){
+    if(root == NULL) return;
+    if(root->val == u){
+        MakeNode(root, u, v, c);
+    }else{
+        InsertNode(root->left, u, v, c);
+        InsertNode(root->right, u, v, c);
+    }
+}
+
+void Preorder(Node *root){
+    if(root == NULL) return;
+    cout << root->val << " ";
+    Preorder(root->left);
+    Preorder(root->right);
+}
+
+void Postorder(Node *root){
+    if(root == NULL) return;
+    Postorder(root->left);
+    Postorder(root->right);
+    cout << root->val << " ";
+}
+
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int n; cin >> n;
+    Node *root = NULL;
+    for(int i = 0; i < n; i++){
+        int u, v; char c; 
+        cin >> u >> v >> c;
+        if(root == NULL){
+            root = new Node(u);
+            MakeNode(root, u, v, c);
+        }
+        else{
+            InsertNode(root, u, v, c);
+        }
+    }
+    // Preorder(root);
+    Postorder(root);
+    return 0;
+}

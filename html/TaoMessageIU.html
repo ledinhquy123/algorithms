@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Message</title>
+        <meta charset="utf-8">
+        <!--Phải có link trong font answesome mới hiện icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <div id="toast">
+            <!-- <div class="toast toast--success">
+                <div class="toast__icon">
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                </div>
+                <div class="toast__body">
+                    <div class="toast__title">Success</div>
+                    <div class="toast__msg">Máy vi tính kết nối internet (Windows, Ubuntu hoặc MacOS)</div>
+                </div>
+                <div class="toast__close">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="button">
+            <div onclick="ShowSuccessToast();" class="btn btn--success">Show success toast</div>
+            <div onclick="ShowErrorToast();" class="btn btn--danger">Show danger toast</div>
+        </div>
+
+        <script>
+            function toast({
+                title = '',  
+                message = '',
+                type = 'info',
+                duration = 3000
+            }){
+                const main = document.getElementById('toast');
+                if(main){
+                    const icons = {
+                        success: 'fa-sharp fa-solid fa-circle-check',
+                        info: 'fa-solid fa-circle-info',
+                        warning: 'fa-solid fa-circle-exclamation',
+                        error: 'fa-solid fa-circle-exclamation'
+                        
+                    }
+
+
+                    const delay = (duration / 1000).toFixed(2);
+                    const icon = icons[type];
+                    const toast = document.createElement('div');
+                    toast.style.animation = `sildeInLeft ease 1s, fadeOut linear 1s ${delay}s forwards`;
+                    
+                    const autoRemoveId = setTimeout(function(){
+                        main.removeChild(toast);
+                    }, duration + 1000) // thêm 1000 là cộng thêm tgian animation hiển thị
+                    toast.onclick = function(e){
+                        if(e.target.closest('.toast__close')){
+                            main.removeChild(toast);
+                            clear(autoRemoveId);
+                        }
+                    }
+                    toast.classList.add('toast', `toast--${type}`);
+                    toast.innerHTML = `
+                        <div class="toast__icon">
+                            <i class="${icon}"></i>
+                        </div>
+                        <div class="toast__body">
+                            <div class="toast__title">${title}</div>
+                            <div class="toast__msg">${message}</div>
+                        </div>
+                        <div class="toast__close">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    `;
+                    main.appendChild(toast);
+                    
+                }
+            }
+            function ShowSuccessToast(){
+                toast({
+                    title: 'Thành công',
+                    message: 'Con yêu mẹ nhất trên đời',
+                    type: 'success',
+                    duration: 5000
+                });
+            };
+
+            function ShowErrorToast(){
+                toast({
+                    title: 'Thất bại',
+                    message: 'Con yêu mẹ nhiều lắm',
+                    type: 'error',
+                    duration: 5000
+                });
+            };
+        </script>
+    </body>
+</html>

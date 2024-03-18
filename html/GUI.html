@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+    các thẻ thông dụng trong html
+    1. h1 -> h6 - heding: tiêu đề h1 to nhất càng về sau tiêu đề càng nhỏ
+    2. p - paragraph: khi viết nội dung
+    3. img - image: ảnh
+    4. a - anchor: khi muốn chuyển qua trang wed khác
+    5. ul, li - unordered list, list item: danh sách k theo thứ tự
+    6. table: sử dụng khi tạo bảng
+    7. input
+    8. button
+    9.div: dùng để bao quanh tất cả các thẻ khác
+-->
+<html>
+    <head> 
+        <title>F8 - Shop</title> <!-- tên trang wed-->
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <div>
+            <h1>Khi Man Utd bay cao nhờ nhân tố Brazil</h1>
+            <!--Khi muốn chọn 1 cái thì phải đặt chung tên - text, checkbox, radio-->
+            <input name="gender" type="radio">
+            <input name="gender" type="radio">
+            <input name="gender" type="radio">
+            <input name="gender" type="radio">
+            <button>Đăng kí</button>
+
+            <p>
+                Antony, Fred và đặc biệt là Casemiro đang tạo ra được những nét cá tính mới cho Man Utd dưới thời HLV Erik ten Hag.
+                Thời chưa cập bến Manchester, HLV Erik ten Hag được hỏi về thời tiết của thành phố này, ông đáp: "Chắc không được như Copacabana đâu nhỉ?".
+                Chắc chắn là không, nhưng thay vì được sống ở bãi biển đẹp hàng đầu thế giới tại Rio de Janeiro (Brazil), Ten Hag đang bay cao cùng chất samba trên thảm cỏ Old Trafford ẩm ướt. Antony lần đầu kiến tạo cho Man Utd, Fred ghi bàn bằng cú đánh gót, còn Casemiro lập cú đúp trong trận thắng Reading tại FA Cup. Với bốn bàn, Casemiro đã cân bằng thành tích của các ngôi sao tấn công Nam Mỹ khác từng ở Man Utd như Radamel Falcao hay Angel di Maria
+            </p>
+            <img src = "https://vcdn1-thethao.vnecdn.net/2023/01/31/casemiro-1675152639-4747-1675152874.png?w=1020&h=0&q=100&dpr=1&fit=crop&s=ZGcNYnkIsNdynvLEjap5_Q" alt = "ảnh người yêu"></img> <!-- Khi ảnh bị lỗi thì phần nội dung bên trong alt sẽ được hiển thị -->
+            <a href="https://www.youtube.com/">Tới trang youtube</a> <!--Khi muốn chuyển qua trang wed khác-->
+            
+            <ul>
+                <li>Bài 1</li>
+                <li>Bài 2</li>
+                <li>Bài 3</li>
+                <li>Bài 4</li>
+            </ul>
+
+            <table>
+                <thead> <!--table head-->
+                    <th>STT</th> <!--table heading-->
+                    <th>Tên</th> 
+                    <th>Địa chỉ</th>               
+                </thead>
+
+                <tbody>
+                    <tr> <!--table row-->
+                        <td>1</td> <!--Dùng để tạo 1 phân tử nội dung trong bảng-->
+                        <td>Phan Hồng Nhung</td>
+                        <td>Cái Răng, Cần Thơ</td>
+                    </tr>   
+
+                    <tr>
+                        <td>2</td>
+                        <td>Lê Đình Quý</td>
+                        <td>Đông Lĩnh, Thanh Hóa</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Lê Thị Phượng</td>
+                        <td>Đông Lĩnh, Thanh Hóa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--rem sẽ phụ thuôc vào thẻ html tự định nghĩa
+            em sẽ phụ thuộc vào thẻ gần nó nhất
+            100% mặc định bằng 16px
+            vw, vh: v-viewport, w-width, h-height
+            vw phụ thuộc vào kích thước trình duyệt
+            % phụ thuộc vào thẻ chứa nó(trong th này % phụ thuộc vào thẻ body)
+        -->
+        <title>Quy-Nhung</title>
+        <meta charset="utf-8">
+        <style>
+            html{
+                font-size: 100%;
+            }
+            .box{
+                width: 50vw;
+                height: 50vh;
+                background-color: red;
+            }
+            
+            h1{ font-size: 1em;}
+            ul{ font-size: 10px;}
+            li{ font-size: 1rem;}
+        </style>
+    </head>
+
+    <body>
+        <div class="box"></div>
+        <div>
+            <h1>CSS units?</h1>
+            <h2>1.Absolute units?</h2>
+            <h2>Các đơn vị không thay đổi</h2>
+            <ul>
+                <li>px</li>
+                <li>pt</li>
+                <li>cm</li>
+                <li>mm</li>
+                <li>inch</li>
+                <li>pc</li>
+            </ul>
+            <h2>2.Relative units?</h2>
+            <h2>Các đơn vị phụ thuộc</h2>
+            <ul>
+                <li>%</li>
+                <li>rem</li>
+                <li>em</li>
+                <li>vw</li>
+                <li>vh</li>
+                <li>vmin</li>
+                <li>vmax</li>
+                <li>ex</li>
+                <li>ch</li>
+            </ul>
+        </div>
+    </body>
+
+</html>
